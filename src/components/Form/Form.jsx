@@ -7,6 +7,7 @@ const Form = ({ datos, setDatos, setShow }) => {
         food: "",
         age: 0
     });
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleChangeName = (event) => {
         setPerson({ ...person, name: event.target.value });
@@ -32,8 +33,9 @@ const Form = ({ datos, setDatos, setShow }) => {
             setDatos([...datos, person]); // Agregar el objeto directamente
             e.target.reset();
             setShow(true);
+            setErrorMessage("");
         } else {
-            alert("Verifica los datos");
+            setErrorMessage("Verifica los datos ingresados.");
         }
     };
 
@@ -48,6 +50,8 @@ const Form = ({ datos, setDatos, setShow }) => {
             <label>Edad : </label>
             <input type="text" onChange={handleChangeAge} />
             <button type='submit'>Enviar</button>
+
+            {errorMessage && <p style={{ color: 'red', background : '#fff' }}>{errorMessage}</p>}
         </form>
     );
 };
