@@ -1,0 +1,23 @@
+.styledTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styledTable thead tr {
+    background-color: #000f98;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styledTable th,
+.styledTable td {
+    padding: 12px 15px;
+}
+
+.styledTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
